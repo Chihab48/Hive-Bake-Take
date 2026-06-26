@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="fr">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Hive Bake & Take | Commander en Ligne</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#715c00",
+                        "surface-container-high": "#ece8df",
+                        "secondary-fixed": "#ffdad4",
+                        "tertiary-fixed-dim": "#ebbcac",
+                        "on-tertiary-fixed-variant": "#603f33",
+                        "outline": "#7e7763",
+                        "outline-variant": "#cfc6af",
+                        "surface": "#fdf9f0",
+                        "tertiary-fixed": "#ffdbcf",
+                        "surface-container-lowest": "#ffffff",
+                        "on-background": "#1c1c17",
+                        "secondary-fixed-dim": "#e3beb8",
+                        "inverse-surface": "#31312b",
+                        "surface-bright": "#fdf9f0",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed": "#2b1613",
+                        "primary-fixed": "#ffe179",
+                        "secondary-container": "#fed7d0",
+                        "surface-container-low": "#f7f3ea",
+                        "on-tertiary-container": "#7c584a",
+                        "surface-container": "#f1eee5",
+                        "on-error": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "primary-fixed-dim": "#e6c448",
+                        "on-tertiary-fixed": "#2e150b",
+                        "on-surface": "#1c1c17",
+                        "on-secondary-container": "#795c57",
+                        "surface-variant": "#e6e2d9",
+                        "secondary": "#745853",
+                        "on-primary-fixed": "#231b00",
+                        "on-primary-container": "#735e00",
+                        "background": "#fdf9f0",
+                        "error": "#ba1a1a",
+                        "primary-container": "#fcd95b",
+                        "inverse-on-surface": "#f4f0e8",
+                        "surface-tint": "#715c00",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed-variant": "#5b403c",
+                        "on-surface-variant": "#4c4635",
+                        "on-primary-fixed-variant": "#554500",
+                        "surface-container-highest": "#e6e2d9",
+                        "error-container": "#ffdad6",
+                        "on-secondary": "#ffffff",
+                        "inverse-primary": "#e6c448",
+                        "tertiary-container": "#ffd2c3",
+                        "surface-dim": "#dddad1",
+                        "tertiary": "#7a5649"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "label-lg": ["Manrope"],
+                        "body-md": ["Manrope"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "label-sm": ["Manrope"],
+                        "body-lg": ["Manrope"],
+                        "display-lg-mobile": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .text-chocolate { color: #3E2723; }
+        .bg-honey { background-color: #fcd95b; }
+        .border-hive { border-color: #715c00; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
+
+<!-- TopNavBar (100% de largeur d'un bout à l'autre) -->
+<nav class="fixed top-0 left-0 w-full z-50 px-6 py-4 bg-surface/90 backdrop-blur-md shadow-sm border-b border-outline-variant/30">
+    <div class="w-full flex justify-between items-center">
+        <div class="flex items-center gap-2">
+            <img alt="Logo Hive Bake & Take" class="h-10 w-10 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5_FithcOfbNQlTo08jsGMHagRFBlggpq2TjE608ysfdE8Ey3UcBAMqJPfjRwCSc7mNehZeSNhVLs4VakWU1g-HZZXNgdW1ssG70J8jkX2I_GtjWUeSvUe_Ii6o_rsaYslvzzzvVwuWp5OEdSaQg32s4Q4uoqItRVnPCaQgUehD1jF-cydEv8_rVR8X7w_5x5vTgvQ1NlC7kTeHDpMTF7yvohs6XgiL3H-CqDCiqXF5QRVixYzEDRa-nNEdEJhYvuLy0v1ZNJYl9E"/>
+            <span class="text-headline-md font-headline-md text-primary tracking-tight">Hive Bake & Take</span>
+        </div>
+        <div class="hidden md:flex items-center gap-8">
+            <a class="text-on-surface-variant hover:text-primary transition-colors font-label-lg text-label-lg" href="index.html">Accueil</a>
+            <a class="text-primary font-bold font-label-lg text-label-lg" href="#">La Carte</a>
+            <a class="text-on-surface-variant hover:text-primary transition-colors font-label-lg text-label-lg" href="#">À Propos</a>
+        </div>
+    </div>
+</nav>
+
+<!-- Titre Principal de la Carte (Inspiré de image_e5da23.png) -->
+<header class="pt-32 pb-8 text-center px-4 max-w-7xl mx-auto">
+    <h1 class="font-display-lg text-4xl md:text-5xl text-primary font-black mb-2">Notre Carte Gourmande</h1>
+    <p class="text-on-surface-variant max-w-2xl mx-auto font-body-lg">
+        Choisissez vos douceurs artisanales préférées, préparées avec amour et délicatesse au cœur de notre ruche à Blida.
+    </p>
+</header>
+
+<!-- Conteneur Principal Structuré comme l'image -->
+<main class="max-w-7xl mx-auto px-4 pb-24 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+    
+    <!-- COLONNE GAUCHE : Récapitulatif Panier & Formulaire (35% / 4 colonnes) -->
+    <div class="lg:col-span-4 space-y-6 order-2 lg:order-1">
+        
+        <!-- Bloc 1 : Le Panier -->
+        <div class="bg-white rounded-2xl p-6 border-2 border-hive/20 shadow-sm">
+            <div class="flex justify-between items-center mb-4 border-b border-outline-variant/30 pb-3">
+                <h2 class="text-headline-md text-chocolate font-bold flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary">shopping_basket</span>
+                    Votre Panier
+                </h2>
+                <span id="cart-count" class="bg-primary text-white font-bold px-2.5 py-0.5 rounded-full text-xs">0</span>
+            </div>
+            
+            <!-- Liste dynamique des produits -->
+            <div id="cart-items" class="space-y-4 max-h-60 overflow-y-auto mb-4 pr-1 text-sm">
+                <p class="text-on-surface-variant italic text-center py-4">Votre panier est vide</p>
+            </div>
+            
+            <!-- Calculs de prix -->
+            <div class="border-t border-outline-variant/30 pt-4 space-y-2 text-sm">
+                <div class="flex justify-between text-on-surface-variant">
+                    <span>Sous-total</span>
+                    <span id="subtotal">0 DA</span>
+                </div>
+                <div class="flex justify-between text-on-surface-variant">
+                    <span>Livraison (Blida)</span>
+                    <span id="delivery-price">200 DA</span>
+                </div>
+                <div class="flex justify-between text-chocolate font-black text-lg pt-2 border-t border-dashed border-outline-variant/50">
+                    <span>Total Général</span>
+                    <span id="total-price" class="text-primary">200 DA</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bloc 2 : Informations de Livraison -->
+        <div class="bg-white rounded-2xl p-6 border-2 border-hive/20 shadow-sm">
+            <h2 class="text-headline-md text-chocolate font-bold mb-4 flex items-center gap-2 pb-3 border-b border-outline-variant/30">
+                <span class="material-symbols-outlined text-primary">person_pin_circle</span>
+                Informations Client
+            </h2>
+            <form class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-chocolate uppercase tracking-wider mb-1">Nom Complet *</label>
+                    <input type="text" placeholder="Ex: Ahmed Benacer" required class="w-full bg-surface-container-low border border-outline-variant rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-primary transition-colors">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-chocolate uppercase tracking-wider mb-1">Numéro de Téléphone *</label>
+                    <input type="tel" placeholder="05XX XX XX XX" required class="w-full bg-surface-container-low border border-outline-variant rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-primary transition-colors">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-chocolate uppercase tracking-wider mb-1">Adresse de Livraison (Blida) *</label>
+                    <textarea rows="3" placeholder="Quartier, N° de rue, Bâtiment, Étage..." required class="w-full bg-surface-container-low border border-outline-variant rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-primary transition-colors resize-none"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-primary-container text-on-primary-container hover:bg-primary hover:text-white transition-all font-bold py-4 rounded-xl text-center shadow-md">
+                    Confirmer ma commande
+                </button>
+            </form>
+        </div>
+        
+    </div>
+
+    <!-- COLONNE DROITE : Grille de Produits Gourmands (65% / 8 colonnes) -->
+    <div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-6 order-1 lg:order-2">
+        
+        <!-- Carte Produit 1 -->
+        <div class="bg-white rounded-2xl overflow-hidden border border-outline-variant/40 shadow-sm flex flex-col group">
+            <div class="relative aspect-[4/3] overflow-hidden bg-surface-container">
+                <span class="absolute top-3 right-3 z-10 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">Signature</span>
+                <img alt="Cookies Signature" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcG_h3OHnnvNqjWM2fzIPok1MuW-72iA4k8AxQnSjq6_PpORVwTf_GxwXLqR2OTRuhWkLL5o6mtT275wFD3xPa96f-w071EFaIH4yvJBRR-aaJEX2qZQA6kNBEXTqWzu07x0LTJSfRpbW9QNp7mO5efbLIIaVelNGRyXgYEW_MCC_SbLbfJiMzEpBNcrI5Mo2nqEXat8BfZeOirdelL2Iv9Xk-mcDSueZZdjNW2MsU0d-PifT3AUCARePbMAkv2q8WFQRIqPrnhco"/>
+            </div>
+            <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+                <div>
+                    <div class="flex justify-between items-baseline mb-1">
+                        <h3 class="font-bold text-xl text-chocolate">Cookies Signature</h3>
+                        <span class="text-primary font-black text-lg whitespace-nowrap">250 DA</span>
+                    </div>
+                    <p class="text-on-surface-variant text-sm line-clamp-2">Nappage onctueux au Chocolat belge, éclats de Pistache ou brisures de Lotus.</p>
+                </div>
+                <div class="flex items-center gap-3 pt-2">
+                    <div class="flex items-center border border-outline-variant rounded-xl bg-surface-container-low">
+                        <button onclick="updateQty('item1', -1)" class="px-3 py-2 text-chocolate font-bold hover:bg-surface-container-high transition-colors rounded-l-xl">-</button>
+                        <span id="qty-item1" class="px-3 font-bold text-sm min-w-[24px] text-center">0</span>
+                        <button onclick="updateQty('item1', 1)" class="px-3 py-2 text-chocolate font-bold hover:bg-surface-container-high transition-colors rounded-r-xl">+</button>
+                    </div>
+                    <button onclick="addToCart('item1', 'Cookies Signature', 250)" class="flex-1 bg-primary text-white hover:bg-chocolate py-2.5 rounded-xl font-bold text-sm flex items-center justify-center gap-2 transition-all">
+                        <span class="material-symbols-outlined text-sm">add_shopping_cart</span>
+                        Ajouter
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Carte Produit 2 -->
+        <div class="bg-white rounded-2xl overflow-hidden border border-outline-variant/40 shadow-sm flex flex-col group">
+            <div class="relative aspect-[4/3] overflow-hidden bg-surface-container">
+                <span class="absolute top-3 right-3 z-10 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">Le Best-Seller</span>
+                <img alt="Cookies Glacés" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOl01EjAFWxdKs3co3VlKK7lP4JVfP6AuHe11u4h45ns6FcrbJV7amG7_6PZXZPhRlg0lbifrQbMIAnRX0IgGJIAUs3a_qf0G4G-rtPrbrqMAI2aZyYij99bYwihd5Mr7jJHh6WuQeiAjXVI8Wd0e9KymD-nz8lsFMpkvFH7wJPBGfdtBmDLMSFI8lk76w3zWyFCcG_Hpegcyd8-y2asldEvi_X5iQk9wNUegUCYhx5YUfJOKslukRGiAz6n9I2d7bMHnZzECkWy4"/>
+            </div>
+            <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+                <div>
+                    <div class="flex justify-between items-baseline mb-1">
+                        <h3 class="font-bold text-xl text-chocolate">Cookies Glacés</h3>
+                        <span class="text-primary font-black text-lg whitespace-nowrap">300 DA</span>
+                    </div>
+                    <p class="text-on-surface-variant text-sm line-clamp-2">Cookies ultra-fondants sortis du four, accompagnés d'une boule de glace artisanale.</p>
+                </div>
+                <div class="flex items-center gap-3 pt-2">
+                    <div class="flex items-center border border-outline-variant rounded-xl bg-surface-container-low">
+                        <button onclick="updateQty('item2', -1)" class="px-3 py-2 text-chocolate font-bold hover:bg-surface-container-high transition-colors rounded-l-xl">-</button>
+                        <span id="qty-item2" class="px-3 font-bold text-sm min-w-[24px] text-center">0</span>
+                        <button onclick="updateQty('item2', 1)" class="px-3 py-2 text-chocolate font-bold hover:bg-surface-container-high transition-colors rounded-r-xl">+</button>
+                    </div>
+                    <button onclick="addToCart('item2', 'Cookies Glacés', 300)" class="flex-1 bg-primary text-white hover:bg-chocolate py-2.5 rounded-xl font-bold text-sm flex items-center justify-center gap-2 transition-all">
+                        <span class="material-symbols-outlined text-sm">add_shopping_cart</span>
+                        Ajouter
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Carte Produit 3 -->
+        <div class="bg-white rounded-2xl overflow-hidden border border-outline-variant/40 shadow-sm flex flex-col group">
+            <div class="relative aspect-[4/3] overflow-hidden bg-surface-container">
+                <span class="absolute top-3 right-3 z-10 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">Onctueux</span>
+                <img alt="Tiramisu Artisanal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMGqJGGGn20zmYQBAP-W4x0GnAXAzkAbOhasVpE6978ZkFmxEaENmxX4HMwj6e3fVOtDrfzMcnGYcwfOtVvuRKxszfchFhS-l8hjtW_DO3ItROZVEiZt22Cw1q6DdIANrZfjk792YEeMTm4taKAFUYTsJ433YbwwOHabF3KglzvSYaAlU6wpFKr6Q2CkJcWvGEaniAVGN3bor0TrvP7xFDVRvfh0T0K9u1z129tOstrDyHjtEx49u883rYPzDF0xsPBfIhm8p3ew4"/>
+            </div>
+            <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+                <div>
+                    <div class="flex justify-between items-baseline mb-1">
+                        <h3 class="font-bold text-xl text-chocolate">Tiramisu Artisanal</h3>
+                        <span class="text-primary font-black text-lg whitespace-nowrap">350 DA</span>
+                    </div>
+                    <p class="text-on-surface-variant text-sm line-clamp-2">Recette traditionnelle italienne au Café ou variantes fruitées Fraise et Mangue fraîche.</p>
+                </div>
+                <div class="flex items-center gap-3 pt-2">
+                    <div class="flex items-center border border-outline-variant rounded-xl bg-surface-container-low">
+                        <button onclick="updateQty('item3', -1)" class="px-3 py-2 text-chocolate font-bold hover:bg-surface-container-high transition-colors rounded-l-xl">-</button>
+                        <span id="qty-item3" class="px-3 font-bold text-sm min-w-[24px] text-center">0</span>
+                        <button onclick="updateQty('item3', 1)" class="px-3 py-2 text-chocolate font-bold hover:bg-surface-container-high transition-colors rounded-r-xl">+</button>
+                    </div>
+                    <button onclick="addToCart('item3', 'Tiramisu Artisanal', 350)" class="flex-1 bg-primary text-white hover:bg-chocolate py-2.5 rounded-xl font-bold text-sm flex items-center justify-center gap-2 transition-all">
+                        <span class="material-symbols-outlined text-sm">add_shopping_cart</span>
+                        Ajouter
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<!-- Logique Interactive en JavaScript (Gestion du Panier et sélecteurs de quantité) -->
+<script>
+    // État du panier d'achat
+    const cart = {};
+    const deliveryFee = 200;
+
+    // Gestion locale du compteur des sélecteurs d'items (+ / -)
+    function updateQty(id, change) {
+        const element = document.getElementById(`qty-${id}`);
+        let currentQty = parseInt(element.innerText);
+        currentQty += change;
+        if (currentQty < 0) currentQty = 0;
+        element.innerText = currentQty;
+    }
+
+    // Ajouter ou mettre à jour un produit directement dans le panier
+    function addToCart(id, name, price) {
+        const qtyToAdd = parseInt(document.getElementById(`qty-${id}`).innerText);
+        
+        if (qtyToAdd === 0) {
+            delete cart[id];
+        } else {
+            cart[id] = { name: name, price: price, qty: qtyToAdd };
+        }
+        renderCart();
+    }
+
+    // Générer dynamiquement le HTML du panier et calculer les prix
+    function renderCart() {
+        const container = document.getElementById('cart-items');
+        const countBadge = document.getElementById('cart-count');
+        container.innerHTML = '';
+        
+        let subtotal = 0;
+        let totalItemsCount = 0;
+        const keys = Object.keys(cart);
+        
+        if (keys.length === 0) {
+            container.innerHTML = '<p class="text-on-surface-variant italic text-center py-4">Votre panier est vide</p>';
+            countBadge.innerText = '0';
+            document.getElementById('subtotal').innerText = '0 DA';
+            document.getElementById('total-price').innerText = `${deliveryFee} DA`;
+            return;
+        }
+        
+        keys.forEach(id => {
+            const item = cart[id];
+            const itemTotal = item.price * item.qty;
+            subtotal += itemTotal;
+            totalItemsCount += item.qty;
+            
+            const itemRow = document.createElement('div');
+            itemRow.className = 'flex justify-between items-center bg-surface-container-low p-2.5 rounded-xl border border-outline-variant/20';
+            itemRow.innerHTML = `
+                <div>
+                    <p class="font-bold text-chocolate">${item.name}</p>
+                    <p class="text-xs text-on-surface-variant">Quantité: ${item.qty} × ${item.price} DA</p>
+                </div>
+                <span class="font-bold text-primary">${itemTotal} DA</span>
+            `;
+            container.appendChild(itemRow);
+        });
+        
+        countBadge.innerText = totalItemsCount;
+        document.getElementById('subtotal').innerText = `${subtotal} DA`;
+        document.getElementById('total-price').innerText = `${subtotal + deliveryFee} DA`;
+    }
+</script>
+
+</body>
+</html>
